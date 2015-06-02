@@ -36,6 +36,18 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+|--------------------------------------------------------------------------
+| paths of proyects
+|--------------------------------------------------------------------------
+|
+| These paths are used on projects
+|
+*/
+
+define('FRONTEND_TEMPLATE', 'templates/frontend/template');
+define('BACKEND_TEMPLATE', 'templates/backend/template');
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

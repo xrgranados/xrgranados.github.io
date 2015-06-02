@@ -17,7 +17,7 @@ class Home extends CI_Controller {
 
         $data['title_page'] = 'home';
         $data['main_content'] = 'frontend/home';
-        $this->load->view('templates/template', $data);
+        $this->load->view(FRONTEND_TEMPLATE, $data);
     }
 }
 

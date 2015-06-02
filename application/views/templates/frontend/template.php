@@ -1,13 +1,13 @@
 <?php
 
 // Header
-$this->load->view('templates/header');
+$this->load->view('templates/frontend/header');
 
 // Content
 $this->load->view($main_content);
 
 // Footer
-$this->load->view('templates/footer');
+$this->load->view('templates/frontend/footer');
 
 
 /* End of file template.php */
