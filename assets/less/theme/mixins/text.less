@@ -1,0 +1,41 @@
+//
+// Text
+// @copyright Grupo Premiere 360
+// @author @xrgranados
+//------------------------------------------------------------------------------
+
+// text-hide
+.text-hide() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// Typography
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover,
+  a&:focus {
+    color: darken(@color, 10%);
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// insert an ellipsis at the end of a text
+.truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// End of file text.less
+// Location: ./assets/less/theme/mixins/text.less

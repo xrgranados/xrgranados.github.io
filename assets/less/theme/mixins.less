@@ -1,21 +1,18 @@
-// Components
-// Author @xrgranados
+//
+// Mixins
+// @copyright Grupo Premiere 360
+// @author @xrgranados
+//------------------------------------------------------------------------------
 
-.border-radius(@radius) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-      -ms-border-radius: @radius;
-       -o-border-radius: @radius;
-          border-radius: @radius;
-}
-
-.border-radius-top(@radius) {
-  -webkit-border-radius: @radius @radius 0 0;
-     -moz-border-radius: adius @radius 0 0;
-      -ms-border-radius: adius @radius 0 0;
-       -o-border-radius: adius @radius 0 0;
-          border-radius: adius @radius 0 0;
-}
+@import "mixins/border-radius.less";
+@import "mixins/filters.less";
+@import "mixins/flexbox.less";
+@import "mixins/gradients.less";
+@import "mixins/image.less";
+@import "mixins/shadows.less";
+@import "mixins/size.less";
+@import "mixins/text.less";
+@import "mixins/vendor-prefixes.less";
 
 .transform(@trans) {
   -webkit-transform: (@trans);
@@ -23,14 +20,6 @@
       -ms-transform: (@trans);
        -o-transform: (@trans);
           transform: (@trans);
-}
-
-.transition(@transition) {
-  -webkit-transition: (@transition);
-     -moz-transition: (@transition);
-      -ms-transition: (@transition);
-       -o-transition: (@transition);
-          transition: (@transition);
 }
 
 .text-shadow(@h-shadow: 1px, @v-shadow: 1px, @blur: 5px, @color: rgba(0,0,0,0.5)) {
@@ -57,3 +46,16 @@
   -moz-box-shadow: inset @h-shadow @v-shadow @radius-shadow @radius-prorogation @color;
   box-shadow: inset @h-shadow @v-shadow @radius-shadow @radius-prorogation @color;
 }
+
+._flex {
+  -ms-box-orient: horizontal;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -moz-box;
+  display: flex;
+}
+
+// End of file mixins.less
+// Location: ./assets/less/theme/mixins.less

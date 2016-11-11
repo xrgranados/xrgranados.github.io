@@ -1,23 +1,12 @@
+//
 // Utitlities
-// Author @xrgranados
+// @copyright Grupo Premiere 360
+// @author @xrgranados
+//------------------------------------------------------------------------------
 
-// makes a circle a square box
-.circle {
-  .border-radius(50%);
-}
-
-// Generates the class .radius-(n), border-radius to apply to the element (5px)
-.generate-radius(@n, @i: 1) when (@i =< @n) {
-  @name: (@i * 5);
-  .radius-@{name} {
-    .border-radius(@i * 5px);
-  }
-  .generate-radius(@n, (@i + 1));
-}
-
-.generate-radius(5);
-
-// Generates the class .height-(n), height to apply to the element (10px)
+// Generates the class
+// .height-10 ~ .height-100
+// increasing the height every time 10px
 .generate-heigth(10);
 .generate-heigth(@n, @i: 1) when (@i =< @n) {
   @name: (@i * 10);
@@ -28,42 +17,139 @@
 }
 
 
+// Border-radius
+//------------------------------------------------------------------------------
+
+// makes a square box a circle
+.circle(@size: 5px) {
+  .border-radius(50%);
+  .square(@size);
+}
+
+// Generates the class .radius-(n), border-radius to apply to the element (5px)
+.generate-radius(@n, @i: 1) when (@i =< @n) {
+  @name: (@i * 5);
+  .radius-@{name} {
+    .border-radius(@i * 5px);
+  }
+  .generate-radius(@n, (@i + 1));
+}
+.generate-radius(5);
+
+
+// Positions
+//------------------------------------------------------------------------------
+
+// generates the classes
+// .pox-relative .pos-absolute .pos-fixed .pos-static
+.gen-positions(@positions; @index) when (@index > 0) {
+  @position : extract(@positions, @index);
+  .pos-@{position} {
+    position: @position;
+  }
+  .gen-positions(@positions; (@index - 1));
+}
+.gen-positions(@positions; @positionscount);
+
 // Eliminates the float property
 .float-none {
   float: none;
 }
 
-// Add position absolute property
-.absolute {
-  position: absolute;
+// Center-align a block level element
+.center-block() {
+  .float-none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-// Add position relative property
-.relative{
-  position: relative;
+
+// Colors
+//------------------------------------------------------------------------------
+
+// generates the classes
+// .gp-bg--{color}
+// .gen-bg(@color-palette; @index) when (@index > 0) {
+//   @color-palette : extract(@color-palette, @index);
+//   .gp-bg--@{color-palette} {
+//     background-color: @color-palette;
+//   }
+//   .gen-bg(@color-palette; (@index - 1));
+// }
+// .gen-bg(@color-palette; @palettecount);
+
+// Opacity
+.opacity(@opacity) {
+  @opacityPercent: @opacity * 100;
+  opacity: @opacity;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacityPercent})";
+  filter: ~"alpha(opacity=@{opacityPercent})";
 }
 
-.no-display {
-  display: none !important;
+
+// Text
+//------------------------------------------------------------------------------
+
+// Generates the class
+// text-left .text-right .text-center .text-justify
+.gen-aligns(@aligns; @index) when (@index > 0) {
+  @align : extract(@aligns, @index);
+  .text-@{align} {
+    text-align: @align !important;
+  }
+  .gen-aligns(@aligns; (@index - 1));
 }
+.gen-aligns(@aligns; @alignscount);
+
+// generates the classes
+// .text-uppercase .text-lowercase .text-capitalize
+.gen-texttrans(@texttrans; @index) when (@index > 0) {
+  @ttransform : extract(@texttrans, @index);
+  .text-@{ttransform} {
+    text-transform: @ttransform !important;
+  }
+  .gen-texttrans(@texttrans; (@index - 1));
+}
+.gen-texttrans(@texttrans; @texttranscount);
+
+
+// .no-display {
+//   display: none !important;
+// }
 
 // Show grid Bootstrap
-.show-grid [class^="col-"] {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #eee;
-  background-color: rgba(86,61,124,.15);
-  border: 1px solid #ddd;
-  border: 1px solid rgba(86,61,124,.2);
-}
+// .show-grid [class^="col-"] {
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   background-color: #eee;
+//   background-color: rgba(86,61,124,.15);
+//   border: 1px solid #ddd;
+//   border: 1px solid rgba(86,61,124,.2);
+// }
 
-hr {
-  border: 0 solid #ccc;
-  border-top-width: 1px;
-  clear: both;
-}
 
-.no-padding{
-  padding-left: 0;
-  padding-right: 0;
-}
+
+// .alpha {
+//   padding-left: 0px;
+// }
+
+// .omega {
+//   padding-right: 0px;
+// }
+
+// // color
+// .gp-bg--white {
+//   background-color: white !important;
+// }
+
+// .gp-bg--black {
+//   background-color: black !important;
+// }
+
+// .gp-bg--transparent {
+//   background-color: transparent !important;
+// }
+
+// End of file utilities.less
+// Location: ./assets/less/theme/utilities.less
