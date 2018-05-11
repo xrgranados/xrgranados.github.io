@@ -1,0 +1,17 @@
+/* AUTHOR */
+    Web designer: Rafel Granados
+    Twitter: @xrgranados
+    From: Guatemala, Guatemala
+
+/* THANKS */
+    (First): God
+
+    Avatar illustration: Manuel Martínez
+    Instagram: @mr_merns
+    From: Guatemala, Guatemala
+
+/* SITE */
+    Last update:2018/05/11
+    Language: Spanish
+    Doctype:HTML5
+    IDE: Sublime Text, Atom, FileZilla, Photoshop
