@@ -5,14 +5,14 @@ var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css', function(){
-  return gulp.src('assets/less/*.less')
+  return gulp.src('assets/src/less/*.less')
     .pipe(less())
     .pipe(minifyCSS())
     .pipe(gulp.dest('assets/css'))
 });
 
 gulp.task('js', function(){
-  return gulp.src('assets/src/*.js')
+  return gulp.src('assets/src/js/*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
     .pipe(sourcemaps.write())
