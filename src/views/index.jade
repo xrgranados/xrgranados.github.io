@@ -1,0 +1,150 @@
+doctype html
+html
+  head
+    title Rafael Granados :: @xrgranados
+    meta(charset="UTF-8")
+    meta(name='viewpor', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(type='text/plain', rel='author', href='humans.txt')
+    link(rel='stylesheet', href='assets/css/bootstrap.min.css')
+    link(rel='stylesheet', href='assets/css/font-awesome.min.css')
+    link(rel='stylesheet', href='assets/css/style.css')
+
+  body
+    #main.card
+      .sidebar
+        .card__avatar
+          img(src='assets/img/avatar.png', alt='Rafael Granados')
+
+        .card__label
+          h1.card__name Rafael Granados
+          h2.card__nick @xrgranados
+          p
+            em.swapper Ego sum qui sum.
+
+        .clearfix
+
+        .card__footer
+            .card__icon
+              a.card__link(target='_blank', href='https://twitter.com/xrgranados', title='twitter')
+                i.fa.fa-twitter
+
+            .card__icon
+              a.card__link(target='_blank', href='https://codepen.io/xrgranados', title='codepen')
+                i.fa.fa-codepen
+
+            .card__icon
+              a.card__link(target='_blank', href='https://github.com/xrgranados', title='github')
+                i.fa.fa-github
+
+            p Lorem ipsum dolor sit amet.
+
+      .card__content
+        section
+
+    .viewport.background#particles-js
+      canvas(width='1600', height='768', style='width: 100%; height: 100%;')
+
+    script(src="assets/js/particles.min.js")
+    script(src="assets/js/main.js")
+
+    script.
+      particlesJS("particles-js", {
+        particles: {
+          color: "#fff",
+          shape: "circle", // "circle", "edge" or "triangle"
+          opacity: 0.75,
+          size: 3,
+          size_random: true,
+          nb: 250,
+          line_linked: {
+            enable_auto: false,
+            distance: 100,
+            color: "#fff",
+            opacity: 0.85,
+            width: 1,
+            condensed_mode: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 600
+            }
+          },
+          anim: {
+            enable: true,
+            speed: 0.25
+          }
+        },
+        interactivity: {
+          enable: false,
+          mouse: {
+            distance: 250
+          },
+          detect_on: "window", // "canvas" or "window"
+          mode: "grab",
+          line_linked: {
+            opacity: 0.5
+          },
+          events: {
+            onclick: {
+              enable: true,
+              mode: "push", // "push" or "remove" (particles)
+              nb: 4
+            }
+          }
+        },
+        /* Retina Display Support */
+        retina_detect: true
+      });
+
+      js.ert.setup(function() {
+        js.ert.track(document.getElementById("main"));
+      });
+
+      // old tiroir code
+      window.addEventListener("load", function() {
+        // Knuth shuffle:
+        function shuffle(array) {
+          var idx = array.length;
+          while (0 !== idx) {
+            var r = Math.floor(Math.random() * idx);
+            idx -= 1;
+            var t = array[idx];
+            array[idx] = array[r];
+            array[r] = t;
+          }
+          return array;
+        }
+
+        var s = shuffle([
+          // ---- cheers
+          "hi",
+          "ciao",
+          "viva",
+          "salut",
+          "hello",
+          "grüezi",
+          "prosit",
+          "bonjour",
+          "namaste",
+          "guten tag",
+          "buona giornata",
+          "buenos días",
+          // ---- thats
+          // 'that life is life',
+          // 'that you don’t want to write me',
+          "that it’s common to say it’s common",
+          "that four has four letters",
+          "that five has four letters",
+          "that nine has four letters",
+          "that π is close to, but not exactly 3.1415"
+        ]);
+
+        var c = 0;
+        function swap() {
+          c = ++c % s.length;
+          var e = document.querySelector(".swapper");
+          e.innerText = s[c];
+          js.ert.refresh();
+        }
+        swap();
+        setInterval(swap, 5000);
+      });
