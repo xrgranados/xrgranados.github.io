@@ -20,21 +20,6 @@ body {
   z-index:-1;
 }
 
-.adaptable {
-  vertical-align: middle;
-}
-
-@media screen and (min-width: 361px) {
-  .adaptable {
-    display: inline-block;
-    max-width: 360px;
-  }
-}
-@media screen and (max-width: 360px) {
-  .adaptable {
-    display: block;
-  }
-}
 .card {
   background-color: rgba(5,5,5, 0.5);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -47,7 +32,7 @@ body {
   transform: translate(-50%, -50%);
 
   .sidebar {
-    background-color: white;
+    background-color: #fff;
     bottom: 0;
     left: 0;
     padding: 3rem;

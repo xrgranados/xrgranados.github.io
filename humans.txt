@@ -13,5 +13,5 @@
 /* SITE */
     Last update:2018/05/11
     Language: Spanish
-    Doctype:HTML5
+    Doctype: HTML5
     IDE: Sublime Text, Atom, FileZilla, Photoshop
