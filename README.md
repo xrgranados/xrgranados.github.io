@@ -1,5 +1,5 @@
 # xrgranados.github.io
 
-My website on githug.com
+My website on github.com
 
 [ Rafael Granados :: @xrgrandos ]
