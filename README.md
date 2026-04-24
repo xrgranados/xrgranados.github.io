@@ -1,27 +1,75 @@
-# Hi, I'm Rafael :guatemala:
+# xrgranados — Portfolio
 
-<p align="center"><strong>Full Stack Web Developer</strong> with more than 5 years of solid experience in backend, frontend,
-databases, mobile applications, web services and other technologies.<br /></p>
+Personal portfolio built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
-<p align="center" width="300">
-   <span style="border-radius: 50%;">
-      <!-- <img align="center" class="cover" src="https://github.com/xrgranados/xrgranados/blob/main/javascript.gif" /> -->
-      <img align="center" class="cover" src="https://github.com/xrgranados/xrgranados/blob/main/letters.gif" />
-      <!-- <img align="center" class="cover" src="https://media1.giphy.com/media/l2R0flMBPtMGU0wbm/200w.gif" /> -->
-   </span>
-</p>
+## 🚀 Getting Started
 
-<p align="center">
-   <a href="https://codepen.com/xrgranados" target="blank" style='margin-right:4px'>
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg" alt="xrgranados on Codepen" height="28px" width="28px" />
-  </a>
-  <a href="https://instagram.com/xrgranados" target="blank">
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="xrgranados on Instagram" height="28px" width="28px" />
-  </a>
-  <a href="https://twitter.com/xrgranados" target="blank">
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="xrgranados on Twitter" height="28px" width="28px" />
-  </a>
-  <a href="https://www.linkedin.com/in/rafael-granados-b1603659/" target="blank">
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="xrgranados on Linkedin" height="28px" width="28px" />
-  </a>
-</p>
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (http://localhost:4321)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+portfolio-astro/
+├── public/
+│   ├── favicon.svg
+│   └── images/
+│       └── photo.jpg
+├── src/
+│   ├── components/
+│   │   ├── Nav.astro
+│   │   ├── Hero.astro
+│   │   ├── About.astro
+│   │   ├── Work.astro
+│   │   ├── ProjectCard.astro  ← Reusable project card
+│   │   ├── Contact.astro
+│   │   └── Footer.astro
+│   ├── data/
+│   │   └── portfolio.ts
+│   ├── layouts/
+│   │   └── BaseLayout.astro   ← HTML shell + SEO meta
+│   ├── pages/
+│   │   └── index.astro        ← Entry point
+│   └── styles/
+│       └── global.css         ← Design tokens + reset
+├── .github/
+│   └── workflows/
+│       └── deploy.yml         ← GitHub Actions → GitHub Pages
+├── astro.config.mjs
+└── tsconfig.json
+```
+
+## 🌐 Deploying to GitHub Pages
+
+### Option A — Personal site
+
+1. Create a repo named exactly: **`me.github.io`**
+2. In `astro.config.mjs`, set `site: 'https://me.github.io'`
+3. Push to `main` → GitHub Actions deploys automatically
+
+### Option B — Project site
+
+1. Create any repo, e.g.: **`portfolio`**
+2. In `astro.config.mjs`, set:
+   ```js
+   site: 'https://me.github.io',
+   base: '/portfolio',
+   ```
+3. Go to repo **Settings → Pages → Source: GitHub Actions**
+4. Push to `main` → GitHub Actions deploys automatically
+
+### One-time GitHub Setup
+
+In your repository go to:
+**Settings → Pages → Build and deployment → Source → GitHub Actions**

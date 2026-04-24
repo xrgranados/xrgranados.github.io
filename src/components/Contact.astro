@@ -1,0 +1,169 @@
+---
+// src/components/Contact.astro
+import { contactLinks } from '@data/portfolio';
+---
+
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="contact-intro">
+          Let's solve<br />
+          <span>real problems</span><br />
+          together.
+        </p>
+        <p class="contact-text">
+          I am looking for opportunities to <strong>collaborate</strong> with companies,
+          agencies and individuals — not just work for them. I want to bring my development
+          experience where we can work together to optimize our respective expertise and build
+          something that actually matters.
+        </p>
+        <p class="contact-subtext">
+          Feel free to reach out through any of the platforms below.
+        </p>
+      </div>
+
+      <nav class="contact-links" aria-label="Social and contact links">
+        {contactLinks.map(({ label, value, href, icon }) => (
+          <a
+            href={href}
+            class="contact-link"
+            target={href.startsWith('mailto') ? undefined : '_blank'}
+            rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+          >
+            <span class="link-icon" aria-hidden="true">{icon}</span>
+            <span class="link-text">
+              <span class="link-label">{label}</span>
+              <span class="link-value">{value}</span>
+            </span>
+            <span class="link-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* Left */
+  .contact-intro {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .contact-intro span { color: var(--accent); }
+
+  .contact-text {
+    color: var(--text2);
+    font-size: 12.5px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+  .contact-text :global(strong) { color: var(--text); }
+
+  .contact-subtext {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  /* Links */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 12px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--accent-glow);
+    transition: width 0.3s;
+  }
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .contact-link:hover::before { width: 100%; }
+
+  .link-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .link-text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+  .link-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .link-value {
+    display: block;
+    color: inherit;
+  }
+
+  .link-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
