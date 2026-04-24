@@ -1,0 +1,96 @@
+---
+// src/components/Nav.astro
+import { meta } from '@data/portfolio';
+
+const navLinks = [
+  { href: '#about',   label: 'About'   },
+  { href: '#work',    label: 'Work'    },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Home">
+    xr<span>granados</span>
+  </a>
+
+  <ul class="nav-links" role="list">
+    {navLinks.map(({ href, label }) => (
+      <li><a href={href}>{label}</a></li>
+    ))}
+  </ul>
+
+  <div class="nav-status" aria-label="Availability status">
+    {meta.available && (
+      <>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>
+          Available
+          {/*for projects*/}
+        </span>
+      </>
+    )}
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--text2); font-weight: 300; }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text2);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+  }
+</style>

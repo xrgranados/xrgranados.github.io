@@ -1,0 +1,57 @@
+---
+// src/components/Footer.astro
+import { meta } from '@data/portfolio';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-logo">
+      xr<span>granados</span> — {meta.role}
+    </p>
+    <p class="footer-right">
+      Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>
+      · {meta.location} · {year}
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .footer-logo span { color: var(--accent); }
+
+  .footer-right {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .footer-right a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .footer-right a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .footer-inner { padding: 24px; flex-direction: column; text-align: center; }
+  }
+</style>
