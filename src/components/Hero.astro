@@ -6,21 +6,21 @@ import { meta, stats } from '@data/portfolio';
 <section id="hero" aria-label="Introduction">
   <div class="hero-inner">
     <div class="hero-left">
-      <p class="hero-eyebrow">Hi! I'm Rafael</p>
-      <h1 class="hero-name">{meta.name}</h1>
-      <p class="hero-title">{meta.role}<span class="cursor" aria-hidden="true"></span></p>
-      <p class="hero-desc">{meta.tagline}</p>
+      <p class="hero-eyebrow" data-matrix>Hi! I'm Rafael</p>
+      <h1 class="hero-name" data-matrix>{meta.name}</h1>
+      <p class="hero-title" data-matrix>{meta.role}<span class="cursor" aria-hidden="true"></span></p>
+      <p class="hero-desc" data-matrix>{meta.tagline}</p>
 
       <div class="hero-cta">
-        <a href="#work"    class="btn btn-primary">// View my work</a>
-        <a href="#contact" class="btn btn-outline">Get in touch →</a>
+        <a href="#work"    class="btn btn-primary" data-matrix> ▶ View my work</a>
+        <a href="#contact" class="btn btn-outline" data-matrix>Get in touch →</a>
       </div>
 
       <div class="hero-stats" role="list" aria-label="Quick stats">
         {stats.map(({ value, label }) => (
           <div class="stat" role="listitem">
-            <span class="stat-num">{value}</span>
-            <span class="stat-label">{label}</span>
+            <span class="stat-num" data-matrix>{value}</span>
+            <span class="stat-label" data-matrix>{label}</span>
           </div>
         ))}
       </div>
@@ -36,7 +36,7 @@ import { meta, stats } from '@data/portfolio';
         -->
         <!-- <span class="photo-placeholder">[ YOUR PHOTO ]</span> -->
         <div class="photo-border"></div>
-        <span class="photo-tag">{meta.name}</span>
+        <span class="photo-tag" data-matrix>{meta.name}</span>
       </div>
     </div>
   </div>

@@ -7,29 +7,29 @@ import { about, skillGroups } from '@data/portfolio';
   <div class="section-wrap">
     <div class="section-header">
       <span class="section-num">01</span>
-      <h2 class="section-title" id="about-heading">About Me</h2>
+      <h2 class="section-title" id="about-heading" data-matrix>About Me</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="about-grid">
       <!-- Bio -->
       <div class="about-text">
-        <p class="about-headline" set:html={about.headline.replace('web applications', '<span>web applications</span>')}></p>
+        <p class="about-headline" data-matrix set:html={about.headline.replace('web applications', '<span>web applications</span>')}></p>
         {about.paragraphs.map((p) => (
-          <p set:html={p}></p>
+          <p set:html={p} data-matrix></p>
         ))}
       </div>
 
       <!-- Stack Panel -->
       <aside class="stack-panel" aria-label="Technology stack">
-        <div class="stack-panel-header">// Tech Stack</div>
+        <div class="stack-panel-header" data-matrix>▶ Tech Stack</div>
         {skillGroups.map(({ label, chips }) => (
           <div class="stack-group">
             <p class="stack-group-label">{label}</p>
             <ul class="stack-chips" role="list">
               {chips.map(({ name, primary }) => (
                 <li>
-                  <span class:list={['chip', { 'chip-primary': primary }]}>{name}</span>
+                  <span class:list={['chip', { 'chip-primary': primary }]} data-matrix>{name}</span>
                 </li>
               ))}
             </ul>

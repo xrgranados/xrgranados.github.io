@@ -11,12 +11,12 @@ const navLinks = [
 
 <nav aria-label="Main navigation">
   <a href="/" class="nav-logo" aria-label="Home">
-    xr<span>granados</span>
+    xr<span data-matrix>granados</span>
   </a>
 
   <ul class="nav-links" role="list">
     {navLinks.map(({ href, label }) => (
-      <li><a href={href}>{label}</a></li>
+      <li><a href={href} data-matrix>{label}</a></li>
     ))}
   </ul>
 

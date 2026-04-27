@@ -19,9 +19,9 @@ const badgeStyle = badge ? badgeColors[badge.color] : null;
 <article class:list={['project-card', { personal }]}>
   <header class="project-header">
     <div class="project-meta">
-      <p class:list={['project-type', { 'type-blue': personal }]}>{type}</p>
-      <h3 class="project-name">{name}</h3>
-      <p class="project-sub">{subtitle}</p>
+      <p class:list={['project-type', { 'type-blue': personal }]} data-matrix>{type}</p>
+      <h3 class="project-name" data-matrix>{name}</h3>
+      <p class="project-sub" data-matrix>{subtitle}</p>
     </div>
 
     {badge && badgeStyle && (
@@ -29,6 +29,7 @@ const badgeStyle = badge ? badgeColors[badge.color] : null;
         class="badge"
         style={`background:${badgeStyle.bg}; border:1px solid ${badgeStyle.border}; color:${badgeStyle.color}`}
         aria-label={badge.text}
+        data-matrix
       >
         {badge.text}
       </span>
@@ -36,17 +37,17 @@ const badgeStyle = badge ? badgeColors[badge.color] : null;
   </header>
 
   <div class="project-body">
-    <p class="project-desc">{description}</p>
+    <p class="project-desc" data-matrix>{description}</p>
     <ul class="project-achievements" aria-label="Key achievements">
       {achievements.map((item) => (
-        <li>{item}</li>
+        <li data-matrix>{item}</li>
       ))}
     </ul>
   </div>
 
   <footer class="project-footer" aria-label="Technologies used">
     {stack.map((tech) => (
-      <span class="tech-tag">{tech}</span>
+      <span class="tech-tag" data-matrix>{tech}</span>
     ))}
   </footer>
 </article>
@@ -140,7 +141,7 @@ const badgeStyle = badge ? badgeColors[badge.color] : null;
   }
   .project-achievements li:last-child { border-bottom: none; }
   .project-achievements li::before {
-    content: '//';
+    content: '▶';
     color: var(--accent);
     font-size: 10px;
     flex-shrink: 0;
