@@ -35,7 +35,7 @@ function initMatrixHover({
 
       if (frame >= totalFrames) {
         clearInterval(interval);
-        el.textContent = original;
+        el.innerHTML = original;
       }
     }, speed);
   }

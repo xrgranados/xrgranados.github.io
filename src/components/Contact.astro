@@ -1,6 +1,10 @@
 ---
 // src/components/Contact.astro
 import { contactLinks } from '@data/portfolio';
+const contactText = `I am looking for opportunities to <strong>collaborate</strong> with companies,
+          agencies and individuals — not just work for them. I want to bring my development
+          experience where we can work together to optimize our respective expertise and build
+          something that actually matters.`;
 ---
 
 <section id="contact" aria-labelledby="contact-heading">
@@ -18,11 +22,7 @@ import { contactLinks } from '@data/portfolio';
           <span>real problems</span><br />
           together.
         </p>
-        <p class="contact-text" data-matrix>
-          I am looking for opportunities to <strong>collaborate</strong> with companies,
-          agencies and individuals — not just work for them. I want to bring my development
-          experience where we can work together to optimize our respective expertise and build
-          something that actually matters.
+        <p class="contact-text" data-matrix data-original={contactText} set:html={contactText}>
         </p>
         <p class="contact-subtext">
           Feel free to reach out through any of the platforms below or email for inquiries or just to say:

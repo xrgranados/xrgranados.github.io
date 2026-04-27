@@ -61,12 +61,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </body>
 </html>
 
-<script src="/js/swap.js" is:inline></script>
 <script src="/js/matrixHover.js" is:inline></script>
+<script src="/js/swap.js" is:inline></script>
 <script src="/js/jquery/3.7.1/jquery.min.js" is:inline></script>
 
 <script>
-  initMatrixHover({
+  const matrix = initMatrixHover({
     selector: "[data-matrix]",
     color: "#00e5c0",
     speed: 25,

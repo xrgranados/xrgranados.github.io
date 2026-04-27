@@ -57,8 +57,9 @@ let c = 0;
 const e = document.querySelector('.write')
 function swap(){
   c = ++c % s.length
-  e.href = 'mailto:xr.granados@gmail.com?subject=' + s[c]
-  e.innerText = s[c]
+  e.href = 'mailto:xr.granados@gmail.com?subject=' + s[c];
+  e.innerText = s[c];
+  e.dataset.original = s[c];
 }
 swap()
 setInterval(swap, 9000)

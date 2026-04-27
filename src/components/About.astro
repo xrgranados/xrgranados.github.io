@@ -16,7 +16,7 @@ import { about, skillGroups } from '@data/portfolio';
       <div class="about-text">
         <p class="about-headline" data-matrix set:html={about.headline.replace('web applications', '<span>web applications</span>')}></p>
         {about.paragraphs.map((p) => (
-          <p set:html={p} data-matrix></p>
+          <p set:html={p} data-matrix data-original={p}></p>
         ))}
       </div>
 
