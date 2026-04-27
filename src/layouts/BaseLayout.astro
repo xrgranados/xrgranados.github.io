@@ -61,21 +61,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </body>
 </html>
 
-<script type="module">
-  import { initMatrixHover } from "../js/matrixHover.js";
+<script src="/js/swap.js" is:inline></script>
+<script src="/js/matrixHover.js" is:inline></script>
+<script src="/js/jquery/3.7.1/jquery.min.js" is:inline></script>
 
+<script>
   initMatrixHover({
     selector: "[data-matrix]",
     color: "#00e5c0",
     speed: 25,
     duration: 500
   });
-</script>
 
-<!-- <script src="/js/run.js" is:inline></script> -->
-<script src="/js/jquery/3.7.1/jquery.min.js" is:inline></script>
-
-<script>
   $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')

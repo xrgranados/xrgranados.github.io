@@ -1,10 +1,10 @@
-export function initMatrixHover({
+function initMatrixHover({
   selector = "[data-matrix]",
   color = "#00e5c0",
   speed = 20,
   duration = 500
 } = {}) {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*.!•«»";
 
   function scramble(el) {
     const original = el.dataset.original || el.textContent;
