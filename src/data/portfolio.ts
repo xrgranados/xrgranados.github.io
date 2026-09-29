@@ -148,9 +148,9 @@ export type ContactLink = {
 };
 
 export const contactLinks: ContactLink[] = [
+  { label: 'WhatsApp',    value: '@xrgranados',                      href: 'https://wa.me/50241424276',            icon: '💬' },
+  { label: 'GitHub',      value: 'github.com/xrgranados',            href: 'https://github.com/xrgranados',        icon: '</>' },
+  { label: 'LinkedIn',    value: 'linkedin.com/in/xrgranados',       href: 'https://linkedin.com/in/xrgranados',   icon: 'in' },
   { label: 'Email',       value: 'xr.granados@gmail.com',            href: 'mailto:xr.granados@gmail.com',         icon: '✉' },
   { label: 'Telegram',    value: '@xrgranados',                      href: 'https://t.me/xrgranados',              icon: '✈' },
-  { label: 'LinkedIn',    value: 'linkedin.com/in/xrgranados',       href: 'https://linkedin.com/in/xrgranados',   icon: 'in' },
-  { label: 'GitHub',      value: 'github.com/xrgranados',            href: 'https://github.com/xrgranados',        icon: '</>' },
-  { label: 'Twitter / X', value: '@xrgranados',                      href: 'https://twitter.com/xrgranados',       icon: '𝕏' },
 ];
